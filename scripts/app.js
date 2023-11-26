@@ -1,10 +1,14 @@
 import { RandomName } from "./randomFunction.js";
+import { MakeCarousel } from "./carouselFunction.js";
 
 let addBtn = document.getElementById("addBtn");
 let randBtn = document.getElementById("randBtn");
 let deleteBtn = document.getElementById("deleteBtn");
 let userInput = document.getElementById("userInput");
 let nameTxt = document.getElementById("nameTxt");
+let carouselBtn = document.getElementById("carouselBtn");
+let removeBtn = document.getElementById("removeBtn");
+let injectHere = document.getElementById("injectHere");
 
 let nameArray = [];
 
@@ -31,6 +35,14 @@ deleteBtn.addEventListener('click', function(){
     console.log(nameArray);
     
     localStorage.setItem("names", JSON.stringify(nameArray));
+})
+
+carouselBtn.addEventListener('click', function(){
+    MakeCarousel(injectHere);
+})
+
+removeBtn.addEventListener('click', function(){
+    injectHere.innerHTML = "";
 })
 
 
